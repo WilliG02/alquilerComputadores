@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CLIENTES</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type = "text/javascript" src = "myScript.js"></script>
+<style>
+    body{
+        background-color:aquamarine;
+    }
+    h1{
+        color: red;
+    }
+    button{
+        background-color: greenyellow;
+    }
+    input{
+        background-color: aqua;
+        color: black;
+    }
+
+</style>
+<body>
+
+    <h1>CLIENTES </h1>
+    <h4>Id del cliente: <input type="number" id="idCliente"><br></h4>     
+    <h4>Nombre del cliente: <input type="text" id="nombreCliente"><br></h4>
+    <h4>Correo del cliente: <input type="text" id="correoCliente"><br></h4>
+    <h4>Edad del cliente:   <input type="number" id="edadCliente"><br></h4>
+    <br>
+    <button onclick="leerClientes()">TRAER CLIENTES</button>
+    <button onclick="guardarCliente()">GUARDAR CLIENTES</button>
+    <button onclick="editarCliente()">ACTUALIZAR CLIENTE</button>
+    <br>
+    <br>
+    
+    <div id="listaClientes">
+        
+    </div>
+</body>
+</html>
