@@ -30,6 +30,14 @@ public class Client implements Serializable {
  */
     // setters y getters
 
+    public boolean isScore() {
+        return score;
+    }
+
+    public void setScore(boolean score) {
+        this.score = score;
+    }
+
     public Integer getIdClient() {
         return idClient;
     }
