@@ -18,7 +18,7 @@ public class Client implements Serializable {
     private String password;
 
     private boolean score;
-
+/*
     // relaciones
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
     @JsonIgnoreProperties("client")
@@ -27,6 +27,7 @@ public class Client implements Serializable {
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
     @JsonIgnoreProperties("client")
     private List<Reservation> reservations;
+ */
     // setters y getters
 
     public Integer getIdClient() {
