@@ -29,22 +29,6 @@ public class Client implements Serializable {
     private List<Reservation> reservations;
     // setters y getters
 
-    public List<Message> getMessages() {
-        return messages;
-    }
-
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
-    }
-
-    public List<Reservation> getReservations() {
-        return reservations;
-    }
-
-    public void setReservations(List<Reservation> reservations) {
-        this.reservations = reservations;
-    }
-
     public Integer getIdClient() {
         return idClient;
     }
@@ -85,11 +69,4 @@ public class Client implements Serializable {
         this.password = password;
     }
 
-    public boolean isScore() {
-        return score;
-    }
-
-    public void setScore(boolean score) {
-        this.score = score;
-    }
 }
