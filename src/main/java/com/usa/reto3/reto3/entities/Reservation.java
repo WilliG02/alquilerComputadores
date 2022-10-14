@@ -15,7 +15,7 @@ public class Reservation implements Serializable {
     private Date startDate;
     private Date devolutionDate;
     private String status;
-    private boolean score;
+    private Integer score;
 
     //relaciones
     @ManyToOne
@@ -40,6 +40,13 @@ public class Reservation implements Serializable {
 
     // setters & getters
 
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
+    }
 
     public Integer getIdReservation() {
         return idReservation;
@@ -71,14 +78,6 @@ public class Reservation implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public boolean isScore() {
-        return score;
-    }
-
-    public void setScore(boolean score) {
-        this.score = score;
     }
 
     public Computer getComputer() {

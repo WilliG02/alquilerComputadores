@@ -25,7 +25,7 @@ public class Computer implements Serializable {
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "computer")
     @JsonIgnoreProperties("computer")
-    private List<Message> messages ;
+    private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "computer")
     @JsonIgnoreProperties("computer")

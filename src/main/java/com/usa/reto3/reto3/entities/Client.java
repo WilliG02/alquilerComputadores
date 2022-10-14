@@ -12,13 +12,11 @@ public class Client implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idClient;
-    private String name;
-    private Integer age;
     private String email;
     private String password;
+    private String name;
+    private Integer age;
 
-    private boolean score;
-/*
     // relaciones
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
     @JsonIgnoreProperties("client")
@@ -27,15 +25,23 @@ public class Client implements Serializable {
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "client")
     @JsonIgnoreProperties("client")
     private List<Reservation> reservations;
- */
+
     // setters y getters
 
-    public boolean isScore() {
-        return score;
+    public List<Message> getMessages() {
+        return messages;
     }
 
-    public void setScore(boolean score) {
-        this.score = score;
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 
     public Integer getIdClient() {
