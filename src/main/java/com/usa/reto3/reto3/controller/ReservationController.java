@@ -1,5 +1,7 @@
 package com.usa.reto3.reto3.controller;
 
+import com.usa.reto3.reto3.Personalizado.CountClient;
+import com.usa.reto3.reto3.Personalizado.StatusAmount;
 import com.usa.reto3.reto3.entities.Reservation;
 import com.usa.reto3.reto3.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Stack;
 
 @RestController
 @RequestMapping("/api/Reservation")
@@ -41,4 +44,15 @@ public class ReservationController {
         return reservationService.deleteReservation(id);
     }
 
+    @GetMapping("/report-clients")
+    public List<CountClient> getReservationReportClient(){ return reservationService.getTopClients();
+    }
+
+    @GetMapping("/report-status")
+    public StatusAmount getReservationStatus(){ return reservationService.getReservationStatusReport(); }
+
+    @GetMapping("/report-dates/{dataOne}/{datetwo}")
+    public List<Reservation> getReservationReportDates(@PathVariable("dateOne") String dateOne, @PathVariable("dateTwo") String dateTwo ){
+        return reservationService.getReservationPeriod(dateOne,dateTwo);
+    }
 }
