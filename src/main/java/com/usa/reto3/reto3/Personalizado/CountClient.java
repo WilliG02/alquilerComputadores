@@ -3,7 +3,7 @@ package com.usa.reto3.reto3.Personalizado;
 import com.usa.reto3.reto3.entities.Client;
 
 public class CountClient {
-    private long total;
+    private Long total;
     private Client client;
 
     public CountClient(Long total, Client client) {
@@ -11,11 +11,11 @@ public class CountClient {
         this.client = client;
     }
 
-    public long getTotal() {
+    public Long getTotal() {
         return total;
     }
 
-    public void setTotal(long total) {
+    public void setTotal(Long total) {
         this.total = total;
     }
 
