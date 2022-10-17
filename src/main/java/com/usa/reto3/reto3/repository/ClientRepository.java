@@ -18,15 +18,15 @@ public class ClientRepository {
         return (List<Client>) clientCrudRepository.findAll();
     }
     //Encuentra el producto
-    public Optional<Client> getClient(int idClient){
-        return clientCrudRepository.findById(idClient);
+    public Optional<Client> getClient(int id){
+        return clientCrudRepository.findById(id);
     }
     // lo guarda
-    public Client save(Client c){
-        return clientCrudRepository.save(c);
+    public Client save(Client client){
+        return clientCrudRepository.save(client);
     }
     // lo borra
-    public void delete(Client p){
-        clientCrudRepository.delete(p);
+    public void delete(Client client){
+        clientCrudRepository.delete(client);
     }
 }

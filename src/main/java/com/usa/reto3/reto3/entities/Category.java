@@ -8,15 +8,15 @@ import java.util.List;
 
 @Entity
 @Table(name = "category")
-public class Category implements Serializable {
-
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer id;
     private String name;
     private String description;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="category")
     @JsonIgnoreProperties("category")
     private List<Computer> computers;
 

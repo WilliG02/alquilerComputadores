@@ -20,10 +20,10 @@ public class ReservationRepository {
     public Optional<Reservation> getReservation(int id){
         return reservationCrudRepository.findById(id);
     }
-    public Reservation save(Reservation c){
-        return reservationCrudRepository.save(c);
+    public Reservation save(Reservation reservation){
+        return reservationCrudRepository.save(reservation);
     }
-    public void delete(Reservation c){
-        reservationCrudRepository.delete(c);
+    public void delete(Reservation reservation){
+        reservationCrudRepository.delete(reservation);
     }
 }

@@ -5,48 +5,31 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
-@Table(name="reservation")
-public class Reservation implements Serializable {
+@Table(name = "reservation")
+
+public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
-    private String status;
-    private Integer score;
+    private String status="created";
 
-    //relaciones
     @ManyToOne
-    @JoinColumn(name = "computerId")
-    @JsonIgnoreProperties("reservation")
+    @JoinColumn(name = "id")
+    @JsonIgnoreProperties("reservations")
     private Computer computer;
 
     @ManyToOne
-    @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("reservation")
-    private Category category;
-
-    @ManyToOne
-    @JoinColumn(name = "messageId")
-    @JsonIgnoreProperties("reservation")
-    private Message message;
-
-    @ManyToOne
     @JoinColumn(name = "clientId")
-    @JsonIgnoreProperties("reservation")
+    @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
 
+    private String score;
     // setters & getters
-
-    public Integer getScore() {
-        return score;
-    }
-
-    public void setScore(Integer score) {
-        this.score = score;
-    }
 
     public Integer getIdReservation() {
         return idReservation;
@@ -88,27 +71,19 @@ public class Reservation implements Serializable {
         this.computer = computer;
     }
 
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public Message getMessage() {
-        return message;
-    }
-
-    public void setMessage(Message message) {
-        this.message = message;
-    }
-
     public Client getClient() {
         return client;
     }
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
     }
 }

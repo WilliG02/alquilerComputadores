@@ -6,28 +6,23 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table (name="message")
-public class Message implements Serializable {
+@Table(name = "message")
+
+public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMessage;
     private String messageText;
 
-    //relaciones
 
     @ManyToOne
-    @JoinColumn(name = "computerId")
-    @JsonIgnoreProperties("message")
+    @JoinColumn(name="id")
+    @JsonIgnoreProperties({"messages","reservations"})
     private Computer computer;
 
     @ManyToOne
-    @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("message")
-    private Category category;
-
-    @ManyToOne
-    @JoinColumn(name = "clientId")
-    @JsonIgnoreProperties("message")
+    @JoinColumn(name="clientId")
+    @JsonIgnoreProperties({"messages","reservations"})
     private Client client;
 
     // setters & getters
@@ -54,14 +49,6 @@ public class Message implements Serializable {
 
     public void setComputer(Computer computer) {
         this.computer = computer;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
     }
 
     public Client getClient() {
